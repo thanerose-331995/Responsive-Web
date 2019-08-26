@@ -1,0 +1,533 @@
+$white: #efe8e8;
+$black: #26201b;
+
+// -- LOADS AND MIXINS -- //
+@mixin center(){
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+@mixin break($min, $max){
+    @media (min-width: $min) and (max-width: $max){
+        @content; //applies content
+    }
+}
+@mixin overlay-text(){    
+    h2{
+        margin: 5px 0px;
+    }
+    p{
+        font-size: 15px;
+        margin: 0px 15px;
+    }
+    button{
+        margin: 5px;
+        margin-left: 15px;
+    }
+}
+@font-face{
+    font-family: myFont;
+    src: url(assets/fonts/RobotoCondensed-Regular.ttf);
+}
+
+// -- GENERAL SETUP -- //
+body{
+    margin: 0px;
+    color: $white;
+    background-color: $black;
+    font-family: myFont;
+}
+h1{
+    margin: 10px 0px;
+}
+nav{
+    width: 100%;
+    @include center();
+    display: none;
+    @include break(480px, 2000px){
+        display: block;
+    }
+}
+ul{
+    margin: 0px;
+    padding-bottom: 10px;
+}
+li{ 
+    padding: 5px 15px;
+    margin: 5px 20px;
+    display: inline-block;
+    border: 1px solid $white;
+    
+    &:hover{
+        cursor: pointer;
+        color: $black;
+        background-color: $white;
+    }
+}
+button{   
+    background-color: transparent;
+    border: 1px solid $white;
+    color: $white;
+    p{     
+        font-family: myFont;   
+    }
+    
+    &:hover{
+        color: $black;
+        background-color: $white;
+        cursor: pointer;
+    }
+}
+
+// -- HEADER -- //
+#heading{
+    //-- mobile --//
+    margin: 10px 70px;
+    display: flex;
+    flex-flow: row;
+    @include center();
+    justify-content: space-around;
+    h1{
+        margin: 0px 10px;
+    }
+    input{
+        flex-grow: 1;
+        margin: 5px 50px;
+        padding: 5px;
+        display: none;
+    }
+    #search-icon{
+        height: 20px;
+        padding: 10px;
+        display: block;
+    }
+    #basket{
+        height: 20px;
+        padding: 10px;
+        
+        &:hover{
+            cursor: pointer;
+        }
+    }
+    //-- tablet --//
+    @include break(480px, 2000px){
+        input{
+            display: block;
+        }
+        #search-icon{
+            display: block;
+        }
+    }
+    //-- laptop --//
+    @include break(800px, 2000px){
+        margin: 20px 30px 10px 30px;
+    }
+}
+// -- hamburger -- //
+#menu{  
+    position: fixed;
+    padding: 10px;
+    top: 0px;
+    width: 0px;
+    background-color: $black;
+    
+    #ham{        
+        height: 30px;
+        width: 0px;
+    }
+    
+    #sidenav{
+        display: none;
+        ul{
+            padding: 0px;
+        }
+        li{
+            margin: 10px 0px;
+        }
+    }
+    
+    &:hover{
+        cursor: pointer;
+    }
+}
+// -- 2nd nav -- //
+#more-mens, #more-womens{
+    height: 0;
+    display: none;    
+    li{
+        border: none;
+    }
+}
+// this is just to trigger a ScrollMagic animation
+#trigger2{
+    position: absolute;
+    top: 60vh;
+}
+
+// -- FEATURED SECTION -- //
+#featured{
+    //-- mobile --//    
+    display: flex;
+    flex-flow: column;
+    height: 70vh;
+    
+    #img1, #img2{  
+        background-image: url(assets/imgs/img1.jpg);
+        background-size: cover;
+        width: 100%;
+        height: 50%;
+    }
+    #img2{
+        background-image: url(assets/imgs/img2.jpg);
+    }
+    
+    #overlay1{      
+        padding: 25% 5% 10% 55%;
+    }    
+    #overlay2{       
+        padding: 25% 55% 10% 5%;
+        #text2{
+            @include break(480px, 2000px){
+                margin-top: 65%;
+            }
+        }
+    }
+    #text1, #text2{
+        opacity: 0;
+    }
+    @include overlay-text();
+    
+    //-- tablet --//
+    @include break(480px, 2000px){
+        height: 80vh;
+        flex-flow: row;
+        #img1, #img2{            
+            height: auto;
+        }
+    }
+    //-- desktop --//
+    @include break(800px, 2000px){
+        #img1, #img2{                      
+            filter: grayscale(1);
+            &:hover{
+                flex-grow: 1.5;
+                filter: grayscale(0);
+            } 
+        }
+    }
+    
+}
+
+// -- MID BANNER -- //
+#banner{
+    background-image: url(assets/textures/dust%20texture2.png);
+    background-size: cover;
+    @include center();
+    flex-direction: column;
+    padding: 25px;
+    
+    h3{
+        margin: 0px;
+        width: 100%;
+        padding-bottom: 10px;
+    }
+    button{
+        padding: 5px;
+        margin: 0px 35%;
+    }
+}
+
+// -- 2ND FEATURED SECTION -- //
+#featured2{
+    //-- mobile --//
+    #img3{
+        height: 100px;
+        background-image: url(assets/imgs/img3.png);
+        background-size: cover;
+    }
+    #overlay3{
+        padding: 20px 40px;
+        @include center();
+        flex-direction: column;
+        
+        p{
+            width: 150px;
+            margin: 20px auto;
+            display: none;
+        }
+        button{
+            width: 150px;
+            margin: auto;
+            grid-column: 2/3;
+        }
+    }
+    //-- tablet & desktop --//
+    @include break(480px, 2000px){
+        #img3{            
+            height: 200px
+        }
+        #overlay3{
+            display: grid;
+            grid-template-columns: 1fr 1.5fr 1fr;           
+            p{                
+                display: block;
+            }
+        }
+    }
+}
+
+// -- 3RD FEATURED SECTION -- //
+#featured3{    
+    //-- mobile --//
+    display: grid;
+    grid-gap: 5px;
+    h1{
+        margin: 20px auto;
+        letter-spacing: 5px;
+        @include center();
+    }    
+    h2{
+        margin: 0px;
+    }
+    #subscribe{
+        margin: auto;
+        @include center();
+        flex-direction: column;
+        h3{
+            margin: 0px 15px 10px 15px;
+        }
+        input, button, p{
+            width: 60%;
+            margin: 5px auto;
+        }
+    }
+    .container{
+        display: flex;
+        margin-bottom: 20px;
+        background-image: url(assets/textures/plastic%20texture3.png);
+        background-size: cover;
+        .text{
+            @include center();
+            flex-direction: column;
+            padding: 20px;
+        }        
+        .images{
+            width: 100%;
+            display: flex;
+            justify-content: flex-end;
+            
+            div{
+                background-size: cover;
+            }
+            #street1{
+                background-image: url(assets/imgs/street1.png);
+                display: none;
+                @include break(480px, 2000px){ //had to be included here (if it was at the bottom it would compile wrong)
+                    display: block;
+                }
+            }
+            #street2{
+                display: none;
+                @include break(800px, 2000px){ //same with this one
+                    display: block;
+                }
+                background-image: url(assets/imgs/street2.png);
+            }
+            #street3{
+                background-image: url(assets/imgs/street3.png);
+            }
+            #maps1{
+                background-image: url(assets/imgs/maps1.png);
+            }
+            #maps2{
+                @extend #street1;
+                background-image: url(assets/imgs/maps2.png);
+            }
+            #maps3{
+                @extend #street2;        
+                background-image: url(assets/imgs/maps3.png);
+            }
+            #wes1{
+                background-image: url(assets/imgs/wes1.png);
+            }
+            #wes2{
+                @extend #street1;
+                background-image: url(assets/imgs/wes2.png);
+            }
+            #wes3{
+                @extend #street2;
+                background-image: url(assets/imgs/wes3.png);
+            }
+        }
+    }    
+    #street, #wes{
+        background-image: url(assets/textures/plastic%20texture4.png);
+        flex-direction: row-reverse;
+        .images{
+            justify-content: flex-start;
+        }
+    }
+    
+    //-- tablet --//
+    @include break(480px, 800px){
+        h1{
+            padding: 10px 100px;            
+        }
+    }
+    //-- tablet & desktop --//
+    @include break(480px, 2000px){
+        h1{            
+            padding: 10px;
+            
+        }
+        #subscribe{            
+            width: 40%;
+            h3{                
+                margin: 0px auto 10px auto;
+            }
+        }
+        .text{            
+            margin: auto 25px;
+            padding: 0px;
+        }
+        .images{
+            div{            
+                height: 400px;    
+            }
+        }
+    }
+}
+
+//-- GET THE LOOK --//
+#get-the-look{
+    //-- mobile --//
+    margin: 0px;
+    margin-top: 15px;
+    padding: 15px;
+    background-image: url(assets/textures/insta%20texture.png);
+    background-size: cover;
+    @include center();
+    flex-direction: column;    
+    h1{
+        margin: 0px;
+    }
+    #look-container{
+        width: 100%;
+        display: grid;
+        grid-gap: 15px;
+        grid-template-columns: repeat(2 ,1fr);
+        
+        img{
+            width: 100%;
+        }
+        .prices{
+            position: absolute;
+            top: 0;
+            margin: 20% 0% 0% 70%;
+            background-color: white;
+            color: black;
+            padding: 5px;
+        }
+        .look-img-overlay{
+            @include center();
+            position: absolute;
+            top: 0;
+            height: 100%;
+            width: 100%;
+            opacity: 0;
+            transition: .3s ease;    
+            button{
+                margin: auto;
+            }
+        }
+        .look-img-container{
+            position: relative;
+        }
+        .look-img-container:hover .look-img-overlay {
+            opacity: 1;
+        }
+        .look-img-container:hover img{
+            filter: grayscale(1);
+        }
+    }
+    
+    //-- tablet --//
+    @include break(480px, 800px){
+        #look-container{
+            grid-template-columns: repeat(3 ,1fr); 
+        }
+    }
+    
+    //-- desktop --//
+    @include break(800px, 2000px){          
+        margin-bottom: 15px;
+        #look-container{
+            grid-template-columns: repeat(4 ,1fr); 
+        }
+    }
+}
+
+#social{    
+    background-image: url(assets/textures/plastic%20texture.png);
+    background-size: cover;
+    padding: 10px;
+    display: flex;
+    justify-content: space-around;
+    
+    img{
+        margin: 0px 10px;
+        width: 30px;
+        height: 30px;
+        
+        &:hover{
+            cursor: pointer;
+            transform: scale(1.2);
+        }
+    }
+    @include break(480px, 2000px){
+        padding: 30px 350px;  
+    }
+    @include break(800px, 2000px){        
+        margin-top: 30px;
+        img{
+            width: 40px;
+            height: 40px;
+        }
+    }
+}
+// -- svgs --//
+svg{
+    position: absolute;
+    left: 0;
+}
+#svg4{
+    position: absolute;
+    transition: left 2s, top 2s, transform 3s;
+}
+.location1{
+    left: 100px;
+    top: 350px;
+    transform: rotate(25deg);
+}
+.location2{
+    @include break(480px, 800px){
+        top: 400px;
+        left: 600px;
+    }
+    @include break(800px, 2000px){        
+        top: 500px;
+        left: 750px;
+    }
+    transform: rotate(95deg);
+}
+.location3{
+    @include break(480px, 800px){
+        top: 1200px;
+        left: 400px;
+    }
+    @include break(800px, 2000px){        
+        top: 150%;
+        left: 550px;
+    }
+    transform: rotate(170deg);
+}

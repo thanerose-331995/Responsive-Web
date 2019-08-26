@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width">
+		<title>Responsive Web Project</title>
+        <!-- stylesheet -->
+		<link rel="stylesheet" href="style/main.css" type="text/css">
+        <!-- jquery --> 
+		<script src="javascript/jquery-3.4.1.min.js"></script>    
+        <!-- svg -->
+        <script src="javascript/svg.min.js"></script>
+        <!-- velocity -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.5.2/velocity.js"></script>
+        <!-- scrollmagic -->
+        <script src="javascript/ScrollMagic.min.js"></script>
+        <script src="javascript/animation.velocity.js"></script>
+    </head>
+    <body>
+        <div id="heading">
+            <h1>TITLE</h1>
+            <input type="text" placeholder="search...">
+            <img id="search-icon" src="style/assets/icons/search.png">
+            <img id="basket" src="style/assets/icons/basket.png"> 
+        </div>
+        <div id="navs">
+            <nav>
+                <ul>
+                    <li id="mens"><b>Mens</b></li>
+                    <li id="womens"><b>Womens</b></li>
+                    <li id="collections"><b>Collections</b></li>
+                    <li id="other"><b>Other</b></li>
+                </ul>
+            </nav>
+            <nav id="more-mens">
+                <ul>
+                    <li>Dress Shirts</li>
+                    <li>Jeans</li>
+                    <li>Shoes</li>
+                    <li>Coats</li>
+                    <li>Acessories</li>
+                </ul>
+            </nav>
+            <nav id="more-womens">
+                <ul>
+                    <li>Blouses</li>
+                    <li>Trousers</li>
+                    <li>Skirts</li>
+                    <li>Shoes</li>
+                    <li>Coats</li>
+                    <li>Acessories</li>
+                </ul>
+            </nav>
+        </div>
+        <div id="trigger2"></div>
+        <section id="featured">
+            <div id="img1">
+                <div id="overlay1">
+                    <div id="svg1"></div>
+                    <div id="svg2"></div>
+                    <div id="svg3"></div>
+                    <div id="text1">
+                        <h2><i>OFFER ONE</i></h2>
+                        <p>lorem ipsum</p>
+                        <button>shop now</button>
+                    </div>
+                </div>
+            </div>
+            <div id="img2">
+                <div id=overlay2>
+                    <div id="svg5"></div>
+                    <div id="text2">
+                        <h2><i>OFFER TWO</i></h2>
+                        <p>lorem ipsum 2</p>
+                        <button>shop now</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="banner">
+            <h3>STUDENTS 30% OFF</h3>
+            <button>shop now</button>
+        </section>
+        <section id="featured2">
+            <div id="img3">
+                <div id="overlay3">
+                    <p id="txt1">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                    <h2>NEW STYLES</h2>
+                    <p id="txt2">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                    <button><i>Shop Now</i></button>
+                </div>
+            </div>
+        </section>
+        <section id="featured3">
+            <h1><i>Fresh Collections</i></h1>
+            <div id="street" class="container">
+                <div class="text">
+                    <h2 id="trigger3">Korean Streetwear</h2>
+                    <p><i>black on black</i></p>
+                    <button>Shop Now</button>
+                </div>
+                <div class="images">
+                    <div id="street1"></div>
+                    <div id="street2"></div>
+                    <div id="street3"></div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="text">
+                    <h2>Maps Issue</h2>
+                    <p><i>soft edge</i></p>
+                    <button>Subscribe Now</button>
+                </div>
+                <div class="images">
+                    <div id="maps1"></div>
+                    <div id="maps2"></div>
+                    <div id="maps3"></div>
+                </div>
+            </div> 
+            <div id="wes" class="container">
+                <div class="text">
+                    <h2>@atwes Photography</h2>
+                    <p><i>block colour is back</i></p>
+                    <button>Check Now</button>
+                </div>
+                <div class="images">
+                    <div id="wes1"></div>
+                    <div id="wes2"></div>
+                    <div id="wes3"></div>
+                </div>
+            </div> 
+            <div id="subscribe">
+                <h3><i>Subscribe to Maps Magazine for monthly photography</i></h3>
+                <p>Enter Details</p>
+                <input type="text" placeholder="Full Name">
+                <input type="text" placeholder="Email Adress">
+                <button>Send</button>
+            </div>
+        </section>
+        <section id="get-the-look">
+            <h1><i>Get The Look</i></h1>
+            <p>recent looks from the social space</p>
+            <div id="look-container"></div>
+        </section>
+        <section id="social">
+            <img src="style/assets/icons/fb.png">
+            <img src="style/assets/icons/twt.png">
+            <img src="style/assets/icons/insta.png">
+        </section>
+        <div id="svg4" class="location1"></div>
+        <div id="menu">
+            <img id="ham" src="style/assets/icons/hamburger.png">
+            <nav id="sidenav">
+                <ul>
+                    <li>Mens</li>
+                    <li>Womens</li>
+                    <li>Collections</li>
+                    <li>Other</li>
+                </ul>
+            </nav>
+        </div>
+    </body>
+    <script>
+        
+        
+        $(document).ready(function() {
+            
+            var width = screen.width;
+            
+            // -- LOAD IMGS -- //
+            
+            var folder = "style/assets/imgs/looks";
+            var extension = ".png";
+            if(width < 800){
+                var amount = 6;
+            }
+            else{
+                var amount = 8;
+            }
+            var count = 0;        
+            var descriptions = ["short description1", "short description2", "short description3", "short description4", "short description5", "short description6", "short description7", "short description8"];
+            var prices = ["£28", "£45", "£34", "£24", "£36", "£19", "£21", "£44"];
+            $.ajax({
+                //This will retrieve the contents of the folder if the folder is configured as 'browsable'
+                url: folder,
+                success: function (data) {
+                    //List all .png file names in the page
+                    $(data).find("a").attr("href", function (i, val) {
+                        if(count < amount){
+                            if( val.match(/.png/) ) { 
+                                $("#look-container").append( 
+                                    "<div> <div class='look-img-container'><img src='"+ val +"'><p class='prices'>"+ prices[count] +"<p> <div class='look-img-overlay'> <button><p>Buy Now</p></button> </div></div> <p>"+ descriptions[count] +"</p>"
+                                );
+                                count ++;
+                            }                         
+                        }
+                    });
+                }
+            });
+            
+            // -- SVG SETUP -- //
+            if(width > 480){        
+                var rotations = [50, 110, 10];
+                var translations = [250,0,250,40,190,90];
+                var count2 = 0;
+                
+                for(var i = 0; i < 3; i++){      
+                    var draw = SVG('svg'+(i+1)+'').size(width/2, 300)
+                    var polyline = draw.polyline([50,0, 100,100, 0,100, 50,0]).fill('none').stroke({ color: '#ffffff', width: 1})
+                    polyline.transform({ rotation: rotations[i] }).translate(translations[count2],translations[count2+1])
+                    count2 += 2;
+                }
+                
+                var draw = SVG('svg4').size(100, 100)
+                var polyline = draw.polyline([0,0, 100,100, 0,100, 0,0]).fill('none').stroke({ color: '#ffffff', width: 1})
+                            
+                if(width > 800){
+                    var draw = SVG('svg5').size(width/2, 500)
+                    var polyline = draw.polyline([0,0, 100,100, 0,100, 0,0]).fill('none').stroke({ color: '#ffffff', width: 1})
+                    polyline.transform({ rotation: 20 }).translate(210,230)
+                }    
+            }    
+            
+            // -- SCROLLMAGIC ANIMATION -- //
+            var controller = new ScrollMagic.Controller();
+            
+            var scene = new ScrollMagic.Scene({triggerElement: "#img3"})
+                if(width < 480){
+                    var height = 200;
+                }else{
+                    var height = 450;
+                }
+                scene.setVelocity("#img3", {height: height}, {duration: 400}).addTo(controller)
+            
+            var triggers = ["#featured3", "#trigger3", "#maps1"];
+            var elements = ["#street1, #street2, #street3", "#maps1, #maps2, #maps3", "#wes1, #wes2, #wes3"];
+            
+            for(var j = 0; j < 3; j++){
+                var scene = new ScrollMagic.Scene({triggerElement: triggers[j]})
+                .setVelocity(elements[j], {width: '100%'}, {duration: 1000}).addTo(controller);
+            }
+            // -- nav menu -- //
+            if(width < 480){
+                $("#menu, #ham").velocity({width: 30}, {duration: 200});
+            }else{
+                var scene2 = new ScrollMagic.Scene({triggerElement: "#trigger2"})
+                    .setVelocity("#navs", {width: 50, height: 50, opacity: 0}, {duration: 400}).addTo(controller);        
+                var scene3 = new ScrollMagic.Scene({triggerElement: "#trigger2"})
+                    .setVelocity("#menu", {width: 30}, {duration: 200}).addTo(controller);
+                var scene4 = new ScrollMagic.Scene({triggerElement: "#trigger2"})
+                    .setVelocity("#ham", {width: 30}, {duration: 200}).addTo(controller);                
+            }
+            
+            // -- moving svgs -- //
+            var svg = "#svg4";
+            //$(svg).velocity({rotateZ: "25deg"}, {duration: 400});
+            var scene5 = new ScrollMagic.Scene({triggerElement: "#trigger2"})
+                .setClassToggle(svg, "location2").addTo(controller);
+            var scene6 = new ScrollMagic.Scene({triggerElement: "#banner"})
+                .setClassToggle(svg, "location3").addTo(controller);            
+            
+            // -- VELOCITY ANIMATION -- //
+            
+            // -- featured section -- //
+            if(width > 800){            
+                $("#img1").on('mouseenter', function(){
+                    $("#text1").velocity({opacity: 1}, {duration: 400});
+                });
+                $("#img1").on('mouseleave', function(){
+                    $("#text1").velocity({opacity: 0}, {duration: 400});
+                });
+                $("#img2").on('mouseenter', function(){
+                    $("#text2").velocity({opacity: 1}, {duration: 400});
+                });
+                $("#img2").on('mouseleave', function(){
+                    $("#text2").velocity({opacity: 0}, {duration: 400});
+                });
+            }else{
+                $("#text1, #text2").velocity({opacity: 1}, {duration: 600});
+            }
+            
+            // -- nav bar -- //
+            function close(tag){
+                $(tag).velocity({height: 0}, {duration: 200});
+            }
+            function open(tag){
+                $(tag).show();
+                $(tag).velocity({height: 50}, {duration: 200});
+            }
+            
+            $("#mens").on('mouseenter', function(){
+                open("#more-mens");
+                $("#more-womens").hide();
+            })
+            $("#womens").on('mouseenter', function(){
+                open("#more-womens");
+                $("#more-mens").hide();
+            })
+            $("#navs").on('mouseleave', function(){
+                close("#more-mens");
+                close("#more-womens")
+            })
+            $("#collections, #other").on('mouseenter', function(){
+                close("#more-mens");
+                close("#more-womens");
+            })
+            var flag = 0;
+            $("#menu").on('click', function(){
+                if(flag == 0){  
+                    $("#sidenav").css({display: 'block'});
+                    $("#menu").velocity({width: 100}, {duration: 200});
+                    flag = 1;
+                }else{     
+                    $("#sidenav").css({display: 'none'});           
+                    $("#menu").velocity({width: 30}, {duration: 200});
+                    flag = 0;
+                }
+            })
+            
+            
+        }) 
+    </script>
+</html>
